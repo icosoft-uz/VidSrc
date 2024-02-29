@@ -19,6 +19,13 @@ dp = Dispatcher(storage=MemoryStorage())
 router = Router(name='Main')
 
 
+@dp.message(CommandStart())
+async def start_command(message: Message):
+    await message.answer("Hello! I'm ready to assist you. ✨\nWhat would you like to do?",
+                         reply_markup=ReplyKeyboardRemove())  # Clear any previous keyboards
+
+
+
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
     asyncio.run(dp.start_polling(bot))
