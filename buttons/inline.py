@@ -8,7 +8,7 @@ def main():
                 InlineKeyboardButton(text='Search', callback_data='search')
             ],
             [
-                InlineKeyboardButton(text='Find ID', callback_data='find_id'),
+                InlineKeyboardButton(text='Find ID', switch_inline_query_current_chat='id '),
                 InlineKeyboardButton(text='Donate', callback_data='donate')
             ],
             [
